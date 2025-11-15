@@ -28,13 +28,13 @@ const About = () => {
   return (
     <section id="sobre-mi" ref={sectionRef} className={isVisible ? 'fade-in' : ''}>
       <h2>Sobre Mí</h2>
-      <div className="about-content">
+      <div className="about-content-simple">
         <p>
           Soy un ingeniero apasionado por la tecnología con 2 años de experiencia en desarrollo full stack. 
           Mi enfoque principal está en crear soluciones robustas y seguras, combinando mi expertise en desarrollo 
           web con un profundo interés en seguridad informática y hacking ético.
         </p>
-        <p style={{ marginTop: '1rem' }}>
+        <p>
           Especializado en arquitecturas escalables, bases de datos y servicios en la nube, siempre busco 
           implementar las mejores prácticas de seguridad en cada proyecto que desarrollo.
         </p>

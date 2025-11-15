@@ -2,10 +2,24 @@ import React, { useState, useEffect } from 'react';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState('inicio');
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
+
+      // Detectar sección activa
+      const sections = ['inicio', 'sobre-mi', 'habilidades', 'experiencia', 'proyectos', 'contacto'];
+      const current = sections.find(section => {
+        const element = document.getElementById(section);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          return rect.top <= 100 && rect.bottom >= 100;
+        }
+        return false;
+      });
+      if (current) setActiveSection(current);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -14,23 +28,53 @@ const Header = () => {
 
   const scrollToSection = (e, id) => {
     e.preventDefault();
+    setMenuOpen(false);
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   };
 
+  const navItems = [
+    { id: 'inicio', label: 'Inicio' },
+    { id: 'sobre-mi', label: 'Sobre Mí' },
+    { id: 'habilidades', label: 'Habilidades' },
+    { id: 'experiencia', label: 'Experiencia' },
+    { id: 'proyectos', label: 'Proyectos' },
+    { id: 'contacto', label: 'Contacto' }
+  ];
+
   return (
     <header className={isScrolled ? 'scrolled' : ''}>
       <nav>
-        <h1>JAG</h1>
-        <ul>
-          <li><a href="#inicio" onClick={(e) => scrollToSection(e, 'inicio')}>Inicio</a></li>
-          <li><a href="#sobre-mi" onClick={(e) => scrollToSection(e, 'sobre-mi')}>Sobre Mí</a></li>
-          <li><a href="#habilidades" onClick={(e) => scrollToSection(e, 'habilidades')}>Habilidades</a></li>
-          <li><a href="#experiencia" onClick={(e) => scrollToSection(e, 'experiencia')}>Experiencia</a></li>
-          <li><a href="#proyectos" onClick={(e) => scrollToSection(e, 'proyectos')}>Proyectos</a></li>
-          <li><a href="#contacto" onClick={(e) => scrollToSection(e, 'contacto')}>Contacto</a></li>
+        <div className="logo">
+          <span className="logo-text">JAG</span>
+          <div className="logo-dot"></div>
+        </div>
+
+        <button 
+          className={`hamburger ${menuOpen ? 'active' : ''}`}
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <ul className={menuOpen ? 'active' : ''}>
+          {navItems.map(item => (
+            <li key={item.id}>
+              <a 
+                href={`#${item.id}`}
+                className={activeSection === item.id ? 'active' : ''}
+                onClick={(e) => scrollToSection(e, item.id)}
+              >
+                {item.label}
+                {activeSection === item.id && <span className="active-indicator"></span>}
+              </a>
+            </li>
+          ))}
         </ul>
       </nav>
     </header>
