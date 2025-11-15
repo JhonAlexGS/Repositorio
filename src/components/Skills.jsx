@@ -51,9 +51,15 @@ const Skills = () => {
       skills: ['AWS', 'Docker', 'Git', 'CI/CD']
     },
     {
+      category: 'Inteligencia Artificial',
+      icon: '🤖',
+      color: '#111827',
+      skills: ['MLflow', 'Evidently', 'TensorFlow', 'Scikit-learn', 'PyTorch']
+    },
+    {
       category: 'Seguridad',
       icon: '🔒',
-      color: '#111827',
+      color: '#374151',
       skills: ['Hacking Ético', 'Pentesting', 'OWASP', 'Seguridad Web']
     }
   ];
