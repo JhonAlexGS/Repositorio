@@ -40,10 +40,10 @@ const Hero = () => {
       </div>
       
       <div className="hero-content">
-        <div className="hero-badge">
+        {/* <div className="hero-badge">
           <span className="badge-dot"></span>
           Disponible para proyectos
-        </div>
+        </div> */}
         
         <h2 className="hero-title">
           Jhon Alexander García Sierra
@@ -83,12 +83,12 @@ const Hero = () => {
           </a>
         </div>
 
-        <div className="hero-scroll">
+        {/* <div className="hero-scroll">
           <div className="scroll-indicator">
             <span></span>
           </div>
           <p>Scroll para más</p>
-        </div>
+        </div> */}
       </div>
     </section>
   );

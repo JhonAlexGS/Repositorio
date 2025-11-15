@@ -36,6 +36,7 @@ const Experience = () => {
         'Gestión de flujo de archivos integrando HubSpot.',
         'Implementación de un proyecto que unifica los sistemas de OAuth2 de distintas plataformas.'
       ],
+      technologies: ['JavaScript', 'Express.js', 'MongoDB', 'JWT', 'OAuth2', 'HubSpot'],
       icon: '💼'
     },
     {
@@ -47,6 +48,7 @@ const Experience = () => {
         'Gestor estadístico de bases de datos que mediante el uso de Power BI fomentaba el uso que tenían los usuarios frente a los servicios que ofrecía la plataforma BookLick.',
         'Gestionar e integrar recursos al buscador usando Postgress, Elastic Search.'
       ],
+      technologies: ['MongoDB', 'MySQL', 'PostgreSQL', 'Python', 'JavaScript', 'React', 'Power BI', 'Elasticsearch'],
       icon: '📚'
     },
     {
@@ -56,6 +58,7 @@ const Experience = () => {
       responsibilities: [
         'Asistencia de programación y desarrollo en proyectos de máquinas virtuales de oracle, páginas web, como Monitor de MisiónTIC.'
       ],
+      technologies: ['Oracle', 'JavaScript', 'HTML', 'CSS', 'Python'],
       icon: '🎓'
     },
     {
@@ -65,6 +68,7 @@ const Experience = () => {
       responsibilities: [
         'Desarrollo, revisión y supervisión de la funcionalidad y entrenamiento de las nuevas funcionalidades que ofrece el Chatbot de la compañía Zurich.'
       ],
+      technologies: ['JavaScript', 'Chatbot', 'NLP', 'Node.js'],
       icon: '🏢'
     }
   ];
@@ -88,11 +92,24 @@ const Experience = () => {
                 </div>
                 <span className="experience-period">{exp.period}</span>
               </div>
-              <ul className="experience-responsibilities">
-                {exp.responsibilities.map((resp, idx) => (
-                  <li key={idx}>{resp}</li>
-                ))}
-              </ul>
+              
+              <div className="experience-section">
+                <h5 className="experience-subtitle">Responsabilidades</h5>
+                <ul className="experience-responsibilities">
+                  {exp.responsibilities.map((resp, idx) => (
+                    <li key={idx}>{resp}</li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="experience-section">
+                <h5 className="experience-subtitle">Tecnologías Implementadas</h5>
+                <div className="experience-technologies">
+                  {exp.technologies.map((tech, idx) => (
+                    <span key={idx} className="experience-tech-tag">{tech}</span>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         ))}
