@@ -10,7 +10,7 @@ const Header = () => {
       setIsScrolled(window.scrollY > 50);
 
       // Detectar sección activa
-      const sections = ['inicio', 'sobre-mi', 'habilidades', 'experiencia', 'proyectos', 'contacto'];
+      const sections = ['inicio', 'sobre-mi', 'habilidades', 'logros', 'experiencia', 'proyectos-academicos', 'proyectos', 'contacto'];
       const current = sections.find(section => {
         const element = document.getElementById(section);
         if (element) {
