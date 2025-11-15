@@ -11,10 +11,10 @@ import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App scroll-container">
       <Header />
       <Hero />
-      <div className="container">
+      <div className="sections-container">
         <About />
         <Skills />
         <Achievements />

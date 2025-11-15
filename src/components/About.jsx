@@ -31,12 +31,14 @@ const About = () => {
       <div className="about-content-simple">
         <p>
           Soy un ingeniero apasionado por la tecnología con 2 años de experiencia en desarrollo full stack. 
-          Mi enfoque principal está en crear soluciones robustas y seguras, combinando mi expertise en desarrollo 
-          web con un profundo interés en seguridad informática y hacking ético.
+          Actualmente curso una Maestría en Inteligencia Artificial en la Universidad Sergio Arboleda, 
+          combinando mi expertise en desarrollo web con conocimientos avanzados en IA y Machine Learning.
         </p>
         <p>
-          Especializado en arquitecturas escalables, bases de datos y servicios en la nube, siempre busco 
-          implementar las mejores prácticas de seguridad en cada proyecto que desarrollo.
+          Mi enfoque principal está en crear soluciones robustas y seguras, integrando técnicas de inteligencia 
+          artificial con un profundo interés en seguridad informática y hacking ético. Especializado en 
+          arquitecturas escalables, bases de datos y servicios en la nube, siempre busco implementar las 
+          mejores prácticas de seguridad en cada proyecto que desarrollo.
         </p>
       </div>
     </section>

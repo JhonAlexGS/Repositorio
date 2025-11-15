@@ -29,94 +29,61 @@ const Skills = () => {
     {
       category: 'Frontend',
       icon: '🎨',
-      color: '#e74c3c',
-      skills: [
-        { name: 'HTML5', level: 90 },
-        { name: 'CSS3', level: 85 },
-        { name: 'JavaScript', level: 88 },
-        { name: 'React', level: 85 },
-        { name: 'Vue.js', level: 75 }
-      ]
+      color: '#374151',
+      skills: ['HTML5', 'CSS3', 'JavaScript', 'React', 'Vue.js']
     },
     {
       category: 'Backend',
       icon: '⚙️',
-      color: '#3498db',
-      skills: [
-        { name: 'Node.js', level: 85 },
-        { name: 'Express', level: 82 },
-        { name: 'Python', level: 80 },
-        { name: 'Django', level: 75 },
-        { name: 'RESTful APIs', level: 88 }
-      ]
+      color: '#1f2937',
+      skills: ['Node.js', 'Express', 'Python', 'Django', 'APIs']
     },
     {
       category: 'Bases de Datos',
       icon: '🗄️',
-      color: '#2ecc71',
-      skills: [
-        { name: 'MongoDB', level: 85 },
-        { name: 'PostgreSQL', level: 82 },
-        { name: 'MySQL', level: 78 },
-        { name: 'Redis', level: 70 }
-      ]
+      color: '#4b5563',
+      skills: ['MongoDB', 'PostgreSQL', 'MySQL', 'Redis']
     },
     {
       category: 'Cloud & DevOps',
       icon: '☁️',
-      color: '#f39c12',
-      skills: [
-        { name: 'AWS', level: 75 },
-        { name: 'Docker', level: 78 },
-        { name: 'Git', level: 90 },
-        { name: 'CI/CD', level: 72 }
-      ]
+      color: '#6b7280',
+      skills: ['AWS', 'Docker', 'Git', 'CI/CD']
     },
     {
       category: 'Seguridad',
       icon: '🔒',
-      color: '#9b59b6',
-      skills: [
-        { name: 'Hacking Ético', level: 80 },
-        { name: 'Pentesting', level: 75 },
-        { name: 'OWASP', level: 85 },
-        { name: 'Seguridad Web', level: 82 }
-      ]
+      color: '#111827',
+      skills: ['Hacking Ético', 'Pentesting', 'OWASP', 'Seguridad Web']
     }
   ];
 
   return (
     <section id="habilidades" ref={sectionRef}>
       <h2>Habilidades Técnicas</h2>
-      <div className={`skills-grid-modern ${isVisible ? 'fade-in' : ''}`}>
+      <div className={`skills-grid-compact ${isVisible ? 'fade-in' : ''}`}>
         {skillsData.map((category, index) => (
           <div 
             key={index} 
-            className="skill-card-modern"
+            className="skill-card-compact"
             style={{ animationDelay: `${index * 0.1}s` }}
           >
-            <div className="skill-card-header">
-              <span className="skill-icon">{category.icon}</span>
+            <div className="skill-header-compact">
+              <span className="skill-icon-compact">{category.icon}</span>
               <h3 style={{ color: category.color }}>{category.category}</h3>
             </div>
-            <div className="skill-list">
+            <div className="skill-tags-compact">
               {category.skills.map((skill, skillIndex) => (
-                <div key={skillIndex} className="skill-item">
-                  <div className="skill-info">
-                    <span className="skill-name">{skill.name}</span>
-                    <span className="skill-percentage">{skill.level}%</span>
-                  </div>
-                  <div className="skill-bar">
-                    <div 
-                      className="skill-progress"
-                      style={{ 
-                        width: isVisible ? `${skill.level}%` : '0%',
-                        backgroundColor: category.color,
-                        transitionDelay: `${(index * 0.1) + (skillIndex * 0.05)}s`
-                      }}
-                    ></div>
-                  </div>
-                </div>
+                <span 
+                  key={skillIndex} 
+                  className="skill-tag-compact"
+                  style={{ 
+                    borderColor: category.color,
+                    color: category.color 
+                  }}
+                >
+                  {skill}
+                </span>
               ))}
             </div>
           </div>
