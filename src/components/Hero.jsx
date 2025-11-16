@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import perfil from "../img/perfil.jpg"
 
 const Hero = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -40,10 +41,14 @@ const Hero = () => {
       </div>
       
       <div className="hero-content">
-        {/* <div className="hero-badge">
-          <span className="badge-dot"></span>
-          Disponible para proyectos
-        </div> */}
+        <div className="hero-image-container">
+          <img 
+            src={perfil}
+            alt="Jhon Alexander García Sierra" 
+            className="hero-profile-image"
+          />
+          <div className="hero-image-ring"></div>
+        </div>
         
         <h2 className="hero-title">
           Jhon Alexander García Sierra
@@ -82,13 +87,6 @@ const Hero = () => {
             </svg>
           </a>
         </div>
-
-        {/* <div className="hero-scroll">
-          <div className="scroll-indicator">
-            <span></span>
-          </div>
-          <p>Scroll para más</p>
-        </div> */}
       </div>
     </section>
   );

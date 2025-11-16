@@ -48,7 +48,7 @@ const Header = () => {
     <header className={isScrolled ? 'scrolled' : ''}>
       <nav>
         <div className="logo">
-          <span className="logo-text">JAG</span>
+          <span className="logo-text">JAGS</span>
           <div className="logo-dot"></div>
         </div>
 

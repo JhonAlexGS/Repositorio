@@ -68,28 +68,28 @@ const Achievements = () => {
       title: 'Proyectos Completados',
       count: counters.projects,
       suffix: '+',
-      color: '#f39c12'
+      color: '#1f2937'
     },
     {
       icon: '💻',
       title: 'Tecnologías Dominadas',
       count: counters.technologies,
       suffix: '+',
-      color: '#3498db'
+      color: '#374151'
     },
     {
       icon: '📅',
       title: 'Años de Experiencia',
       count: counters.experience,
       suffix: '',
-      color: '#2ecc71'
+      color: '#4b5563'
     },
     {
       icon: '📜',
       title: 'Certificaciones',
       count: counters.certifications,
       suffix: '+',
-      color: '#9b59b6'
+      color: '#6b7280'
     }
   ];
 
@@ -97,22 +97,37 @@ const Achievements = () => {
     {
       icon: '🎯',
       title: 'Desarrollo Full Stack',
-      description: 'Experiencia completa en frontend y backend con tecnologías modernas'
+      description: 'Experiencia completa en frontend y backend con tecnologías modernas',
+      color: '#1f2937',
+      gradient: 'linear-gradient(135deg, #1f2937, #374151)'
     },
     {
       icon: '🔐',
       title: 'Seguridad Avanzada',
-      description: 'Especialización en hacking ético y auditorías de seguridad'
+      description: 'Especialización en hacking ético y auditorías de seguridad',
+      color: '#374151',
+      gradient: 'linear-gradient(135deg, #374151, #4b5563)'
     },
     {
       icon: '⚡',
       title: 'Optimización de Rendimiento',
-      description: 'Mejora del rendimiento de aplicaciones hasta un 60%'
+      description: 'Mejora del rendimiento de aplicaciones hasta un 60%',
+      color: '#4b5563',
+      gradient: 'linear-gradient(135deg, #4b5563, #6b7280)'
     },
     {
       icon: '🚀',
       title: 'Implementación Cloud',
-      description: 'Despliegue y gestión de aplicaciones en AWS y servicios cloud'
+      description: 'Despliegue y gestión de aplicaciones en AWS y servicios cloud',
+      color: '#6b7280',
+      gradient: 'linear-gradient(135deg, #6b7280, #9ca3af)'
+    },
+    {
+      icon: '🎓',
+      title: 'Maestria de IA',
+      description: 'Culminación de estudios en Maestría de Inteligencia Artificial',
+      color: '#6b7280',
+      gradient: 'linear-gradient(135deg, #6b7280, #9ca3af)'
     }
   ];
 
@@ -139,20 +154,21 @@ const Achievements = () => {
       </div>
 
       <div className={`achievements-highlights ${isVisible ? 'fade-in' : ''}`}>
-        {highlights.map((highlight, index) => (
-          <div 
-            key={index} 
-            className="highlight-card"
-            style={{ animationDelay: `${(index + 4) * 0.1}s` }}
-          >
-            <div className="highlight-icon">{highlight.icon}</div>
-            <div className="highlight-content">
-              <h3>{highlight.title}</h3>
-              <p>{highlight.description}</p>
-            </div>
-          </div>
-        ))}
-      </div>
+  {highlights.map((highlight, index) => (
+    <div 
+      key={index} 
+      className="highlight-card-simple"
+      style={{ 
+        animationDelay: `${(index + 4) * 0.1}s`,
+        '--card-color': highlight.color
+      }}
+    >
+      <div className="highlight-icon-simple">{highlight.icon}</div>
+      <h3>{highlight.title}</h3>
+      <p>{highlight.description}</p>
+    </div>
+  ))}
+</div>
     </section>
   );
 };
