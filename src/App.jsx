@@ -7,6 +7,7 @@ import Achievements from './components/Achievements';
 import Experience from './components/Experience';
 import AcademicProjects from './components/AcademicProjects';
 import Projects from './components/Projects';
+import AITools from './components/AITools';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
@@ -18,6 +19,7 @@ function App() {
       <div className="sections-container">
         <About />
         <Skills />
+        <AITools />
         <Achievements />
         <Experience />
         <AcademicProjects />
