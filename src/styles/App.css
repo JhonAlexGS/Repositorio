@@ -2647,6 +2647,10 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  position: relative;
 }
 
 .ai-tool-card.fade-in,
@@ -2658,6 +2662,32 @@ footer {
   transform: translateY(-8px);
   box-shadow: 0 15px 40px rgba(0,0,0,0.15);
   border-color: var(--tool-color);
+}
+
+.ai-tool-link-indicator {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 32px;
+  height: 32px;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all 0.3s ease;
+  color: var(--tool-color);
+}
+
+.ai-tool-card:hover .ai-tool-link-indicator {
+  opacity: 1;
+  transform: translate(3px, -3px);
+}
+
+.ai-tool-link-indicator svg {
+  width: 16px;
+  height: 16px;
 }
 
 .ai-tool-header {
@@ -2679,7 +2709,9 @@ footer {
 }
 
 .ai-tool-card:hover .ai-tool-icon {
-  transform: scale(1.1) rotate(5deg);
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+  border-color: var(--tool-color);
 }
 
 .ai-tool-category {

@@ -32,7 +32,8 @@ const AITools = () => {
       description: 'Asistente de IA para generación de texto, código y análisis',
       icon: '💬',
       color: '#10a37f',
-      level: 90
+      level: 90,
+      url: 'https://chat.openai.com'
     },
     {
       name: 'Claude',
@@ -40,7 +41,8 @@ const AITools = () => {
       description: 'IA avanzada de Anthropic para análisis y desarrollo',
       icon: '🤖',
       color: '#CC785C',
-      level: 85
+      level: 85,
+      url: 'https://claude.ai'
     },
     {
       name: 'GitHub Copilot',
@@ -48,7 +50,8 @@ const AITools = () => {
       description: 'Asistente de programación impulsado por IA',
       icon: '👨‍💻',
       color: '#24292e',
-      level: 80
+      level: 80,
+      url: 'https://github.com/features/copilot'
     },
     {
       name: 'Midjourney',
@@ -56,7 +59,8 @@ const AITools = () => {
       description: 'Generación de imágenes mediante IA',
       icon: '🎨',
       color: '#FF6F61',
-      level: 70
+      level: 70,
+      url: 'https://www.midjourney.com'
     },
     {
       name: 'Gemini',
@@ -64,7 +68,8 @@ const AITools = () => {
       description: 'IA multimodal de Google para texto, código e imágenes',
       icon: '✨',
       color: '#4285F4',
-      level: 75
+      level: 75,
+      url: 'https://gemini.google.com'
     },
     {
       name: 'Perplexity',
@@ -72,7 +77,8 @@ const AITools = () => {
       description: 'Motor de búsqueda potenciado por IA',
       icon: '🔍',
       color: '#20808D',
-      level: 65
+      level: 65,
+      url: 'https://www.perplexity.ai'
     }
   ];
 
@@ -104,8 +110,11 @@ const AITools = () => {
 
       <div className={`ai-tools-grid ${isVisible ? 'fade-in' : ''}`}>
         {filteredTools.map((tool, index) => (
-          <div 
-            key={index} 
+          <a
+            key={index}
+            href={tool.url}
+            target="_blank"
+            rel="noopener noreferrer"
             className="ai-tool-card"
             style={{ 
               animationDelay: `${index * 0.1}s`,
@@ -139,7 +148,15 @@ const AITools = () => {
                 <span className="level-percentage">{tool.level}%</span>
               </div>
             </div>
-          </div>
+
+            <div className="ai-tool-link-indicator">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+              </svg>
+            </div>
+          </a>
         ))}
       </div>
 
