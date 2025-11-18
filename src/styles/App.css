@@ -2819,3 +2819,179 @@ footer {
     font-size: 1.2rem;
   }
 }
+
+
+
+/* Tools Section - Reutiliza estilos de AI Tools */
+#herramientas {
+  padding: 3rem 2rem;
+  background: linear-gradient(180deg, #f9fafb 0%, #ffffff 100%);
+}
+
+#herramientas h2 {
+  margin-top: 6rem;
+  margin-bottom: 1rem;
+}
+
+.tools-subtitle {
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--text);
+  max-width: 700px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.6;
+}
+
+.tools-categories {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.tool-card {
+  background: white;
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(30px);
+  border: 2px solid transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  position: relative;
+}
+
+.tool-card.fade-in,
+.tools-grid.fade-in .tool-card {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.tool-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+  border-color: var(--tool-color);
+}
+
+.tool-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tool-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.tool-card:hover .tool-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.tool-category {
+  background: var(--light);
+  color: var(--primary);
+  padding: 0.4rem 1rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.tool-content h3 {
+  margin: 0 0 0.5rem 0;
+  color: var(--dark);
+  font-size: 1.4rem;
+  text-align: left;
+}
+
+.tool-content p {
+  margin: 0;
+  color: var(--text);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.tool-footer {
+  margin-top: auto;
+}
+
+.tool-level {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.tool-link-indicator {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 32px;
+  height: 32px;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all 0.3s ease;
+  color: var(--tool-color);
+}
+
+.tool-card:hover .tool-link-indicator {
+  opacity: 1;
+  transform: translate(3px, -3px);
+}
+
+.tool-link-indicator svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Responsive Tools */
+@media (max-width: 768px) {
+  .tools-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .tools-categories {
+    gap: 0.5rem;
+  }
+
+  .tool-card {
+    padding: 1.5rem;
+  }
+
+  .tool-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.8rem;
+  }
+
+  .tool-content h3 {
+    font-size: 1.2rem;
+  }
+}

@@ -11,7 +11,7 @@ const Header = () => {
       setIsScrolled(window.scrollY > 50);
 
       // Detectar sección activa
-      const sections = ['inicio', 'sobre-mi', 'habilidades', 'ai-tools', 'logros', 'experiencia', 'proyectos-academicos', 'proyectos', 'contacto'];
+      const sections = ['inicio', 'sobre-mi', 'habilidades', 'ai-tools', 'herramientas', 'logros', 'experiencia', 'proyectos-academicos', 'proyectos', 'contacto'];
       
       for (let i = sections.length - 1; i >= 0; i--) {
         const section = document.getElementById(sections[i]);
@@ -54,6 +54,7 @@ const Header = () => {
     { id: 'sobre-mi', label: 'Sobre Mí' },
     { id: 'habilidades', label: 'Habilidades' },
     { id: 'ai-tools', label: 'IA Tools' },
+    { id: 'herramientas', label: 'Herramientas' },
     { id: 'logros', label: 'Logros' },
     { id: 'experiencia', label: 'Experiencia' },
     { id: 'proyectos', label: 'Proyectos' },
